@@ -16,12 +16,17 @@ public class DiseaseMapTester {
     
     // Prints percentage of diseased students after T cycles of transmission
     public static void main(String[] args) {
+      if (args.length == 0){
+        System.out.println("Error : No Arguments \nArgs should be \"Students Infected Rate Cycles\"");
+      }
+      else{
         int students = Integer.parseInt(args[0]);
-        int diseased = Integer.parseInt(args[1]);
+        int infected = Integer.parseInt(args[1]);
         int rate = Integer.parseInt(args[2]);
         int T = Integer.parseInt(args[3]);
-        DiseaseMap map = new DiseaseMap(students, diseased, rate);
+        DiseaseMap map = new DiseaseMap(students, infected, rate);
         map.progress(T);
-        System.out.println(map.getPercDiseased());
+        System.out.println(map.getPercInfected());
+      }
     }
 }
