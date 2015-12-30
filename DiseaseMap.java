@@ -28,20 +28,20 @@ public class DiseaseMap {
     }
     
     // Get current percentageDiseased
-    public double getPercDiseased() {
+    public double getPercInfected() {
         return (double) this.numInfected/this.numStudents*100;
     }
     
     // Progresses the map T cycles
     public void progress(int T) {
         for (int i = 0; i < T; i++) {
-            progress();
-            System.out.println(this.numInfected);
+            singleProgress();
+            System.out.println(i + "  " + this.numInfected);
         }
     }
     
     // Progresses the map one time cycle
-    private void progress() {
+    private void singleProgress() {
         int newlyInfected = rateOfInfection*(numStudents-numInfected)/100;
         this.numInfected += newlyInfected;
     }
